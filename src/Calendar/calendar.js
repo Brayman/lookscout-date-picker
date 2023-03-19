@@ -11,10 +11,15 @@ const CalendarSection = styled(Section)`
 `;
 
 const Calendar = () => {
+  const dateObj = new Date();
+  const date = new Date(dateObj.setDate(1));
   return (
     <CalendarSection>
-      <Header>March</Header>
-      <Month />
+      <Header>{dateObj.toLocaleDateString('en-EN', { month: 'long' })}</Header>
+      <Month
+        firstDay={date.getDay()}
+        days={new Date(dateObj.setMonth(dateObj.getMonth() + 1, 0)).getDate()}
+      />
       <Buttons />
     </CalendarSection>
   );
