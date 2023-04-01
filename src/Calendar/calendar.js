@@ -7,7 +7,6 @@ import Month from './month';
 
 const CalendarSection = styled(Section)`
   padding: 24px;
-  margin: 1em;
 `;
 
 const Calendar = () => {
